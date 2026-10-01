@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Noyontara ❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:#050509;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  width:500px;
+  height:500px;
+  background:#ff2d75;
+  filter:blur(180px);
+  opacity:.18;
+  top:-150px;
+  left:-150px;
+  z-index:-2;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  width:450px;
+  height:450px;
+  background:#7c3cff;
+  filter:blur(180px);
+  opacity:.15;
+  right:-150px;
+  bottom:-100px;
+  z-index:-2;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(18px);
+  background:rgba(5,5,9,.55);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  z-index:100;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#ff4d88;
+}
+
+nav a{
+  color:#aaa;
+  text-decoration:none;
+  margin-left:25px;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:white;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:100px 20px;
+  position:relative;
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.small{
+  color:#ff6b9b;
+  letter-spacing:4px;
+  font-size:12px;
+  text-transform:uppercase;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  font-size:clamp(55px,10vw,120px);
+  line-height:.9;
+  margin-bottom:25px;
+  background:linear-gradient(90deg,#fff,#ff7aa8,#fff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  color:#aaa;
+  font-size:18px;
+  line-height:1.7;
+}
+
+.scroll{
+  margin-top:45px;
+  display:inline-block;
+  padding:15px 28px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:50px;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.scroll:hover{
+  background:#fff;
+  color:#000;
+}
+
+/* SECTION */
+section{
+  padding:120px 8%;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.title small{
+  color:#ff5c91;
+  letter-spacing:3px;
+}
+
+.title h2{
+  font-size:clamp(35px,6vw,65px);
+  margin-top:12px;
+}
+
+/* LETTER */
+.letter{
+  max-width:800px;
+  margin:auto;
+  padding:45px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:30px;
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(20px);
+  box-shadow:0 30px 80px rgba(0,0,0,.4);
+}
+
+.letter h3{
+  font-size:30px;
+  margin-bottom:25px;
+}
+
+.letter p{
+  color:#bbb;
+  line-height:1.9;
+  font-size:17px;
+}
+
+/* REASONS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  padding:35px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:25px;
+  background:rgba(255,255,255,.035);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  border-color:#ff4f88;
+}
+
+.icon{
+  font-size:35px;
+  margin-bottom:20px;
+}
+
+.card h3{
+  margin-bottom:12px;
+}
+
+.card p{
+  color:#999;
+  line-height:1.6;
+}
+
+/* STORY */
+.story{
+  max-width:750px;
+  margin:auto;
+}
+
+.story-item{
+  border-left:2px solid #ff4d88;
+  padding:0 0 40px 30px;
+  position:relative;
+}
+
+.story-item::before{
+  content:"";
+  width:12px;
+  height:12px;
+  background:#ff4d88;
+  border-radius:50%;
+  position:absolute;
+  left:-7px;
+  top:5px;
+  box-shadow:0 0 20px #ff4d88;
+}
+
+.story-item h3{
+  margin-bottom:10px;
+}
+
+.story-item p{
+  color:#999;
+  line-height:1.7;
+}
+
+/* PROPOSAL */
+.proposal{
+  text-align:center;
+  padding:130px 20px;
+}
+
+.proposal h2{
+  font-size:clamp(40px,7vw,80px);
+  margin:20px 0;
+}
+
+.proposal p{
+  color:#aaa;
+  margin-bottom:40px;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+button{
+  border:none;
+  padding:17px 35px;
+  border-radius:50px;
+  cursor:pointer;
+  font-size:15px;
+  transition:.3s;
+}
+
+.yes{
+  background:#ff3978;
+  color:white;
+  box-shadow:0 10px 35px rgba(255,57,120,.35);
+}
+
+.maybe{
+  background:white;
+  color:black;
+}
+
+.no{
+  background:transparent;
+  color:white;
+  border:1px solid rgba(255,255,255,.2);
+}
+
+button:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+/* RESPONSE */
+.response{
+  display:none;
+  margin:40px auto 0;
+  max-width:600px;
+  padding:30px;
+  border-radius:25px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.response h3{
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.response p{
+  color:#aaa;
+  line-height:1.7;
+}
+
+/* SECRET */
+.secret{
+  text-align:center;
+}
+
+.secret-box{
+  max-width:600px;
+  margin:auto;
+  padding:35px;
+  border-radius:25px;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.04);
+}
+
+.secret-message{
+  display:none;
+  margin-top:25px;
+  font-size:28px;
+  color:#ff6b9b;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:50px 20px;
+  color:#666;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* HEARTS */
+.heart{
+  position:fixed;
+  bottom:-30px;
+  animation:float 5s linear forwards;
+  pointer-events:none;
+  z-index:200;
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0) scale(.5);
+    opacity:0;
+  }
+  15%{opacity:1}
+  100%{
+    transform:translateY(-110vh) rotate(30deg);
+    opacity:0;
+  }
+}
+
+/* CONFETTI */
+.confetti{
+  position:fixed;
+  width:8px;
+  height:14px;
+  top:-20px;
+  z-index:300;
+  animation:fall 3s linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+  }
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+  nav{
+    padding:15px 20px;
+  }
+
+  nav a{
+    display:none;
+  }
+
+  section{
+    padding:90px 20px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .letter{
+    padding:28px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .proposal{
+    padding:100px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">For <span>Noyontara</span> ❤️</div>
+
+  <div>
+    <a href="#letter">Letter</a>
+    <a href="#reasons">Why You</a>
+    <a href="#proposal">Question</a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="small">A little something for you</div>
+
+    <h1>Noyontara</h1>
+
+    <p>
+      I don't know the perfect way to say this...
+      so I decided to make a whole website instead. ❤️
+    </p>
+
+    <a href="#letter" class="scroll">
+      Open My Message ↓
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- LETTER -->
+<section id="letter">
+
+  <div class="container">
+
+    <div class="title">
+      <small>MY MESSAGE</small>
+      <h2>Dear Noyontara</h2>
+    </div>
+
+    <div class="letter">
+
+      <h3>Hey Sundori ❤️</h3>
+
+      <p>
+        There are some things that are difficult to say directly.
+        So I thought... why not turn my feelings into a little
+        website?
+        <br><br>
+
+        You have a beautiful energy that makes ordinary moments
+        feel a little more special.
+        <br><br>
+
+        And honestly, there's one simple thing I really want you
+        to know...
+        <br><br>
+
+        Sometimes one person can make your day better
+        without even trying.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- REASONS -->
+<section id="reasons">
+
+  <div class="container">
+
+    <div class="title">
+      <small>WHY YOU?</small>
+      <h2>Three Little Reasons</h2>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">✨</div>
+        <h3>Your Energy</h3>
+        <p>
+          There's something genuinely special about your presence.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">😊</div>
+        <h3>Your Smile</h3>
+        <p>
+          Somehow your smile makes even a normal moment feel better.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">❤️</div>
+        <h3>Simply You</h3>
+        <p>
+          No complicated explanation. I just really like being around you.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- STORY -->
+<section>
+
+  <div class="container">
+
+    <div class="title">
+      <small>OUR LITTLE STORY</small>
+      <h2>Maybe This Is Just The Beginning</h2>
+    </div>
+
+    <div class="story">
+
+      <div class="story-item">
+        <h3>First Conversation</h3>
+        <p>
+          A normal conversation that somehow became a memorable one.
+        </p>
+      </div>
+
+      <div class="story-item">
+        <h3>Random Moments</h3>
+        <p>
+          Small moments started becoming the moments I remembered.
+        </p>
+      </div>
+
+      <div class="story-item">
+        <h3>And Now...</h3>
+        <p>
+          I finally decided to ask the question I've been thinking about.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROPOSAL -->
+<section id="proposal" class="proposal">
+
+  <div class="container">
+
+    <div class="small">THE QUESTION</div>
+
+    <h2>
+      Noyontara,<br>
+      Will You Go On A Date With Me? ❤️
+    </h2>
+
+    <p>
+      No pressure. Just an honest question from me to you.
+    </p>
+
+    <div class="buttons">
+
+      <button class="yes" onclick="answerYes()">
+        YES ❤️
+      </button>
+
+      <button class="maybe" onclick="answerMaybe()">
+        MAYBE 🤍
+      </button>
+
+      <button class="no" onclick="answerNo()">
+        NO
+      </button>
+
+    </div>
+
+    <div id="yesBox" class="response">
+      <h3>🎉 It's A YES!</h3>
+      <p>
+        Okayyy... now I'm officially smiling. ❤️
+        <br><br>
+        Let's keep it simple — good food, good conversation,
+        and a nice day.
+      </p>
+    </div>
+
+    <div id="maybeBox" class="response">
+      <h3>Take Your Time 🤍</h3>
+      <p>
+        No rush at all. Think about it and answer whenever
+        you feel comfortable.
+      </p>
+    </div>
+
+    <div id="noBox" class="response">
+      <h3>Thank You ❤️</h3>
+      <p>
+        Thank you for being honest, Noyontara.
+        Your answer will always be respected.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SECRET -->
+<section class="secret">
+
+  <div class="container">
+
+    <div class="title">
+      <small>ONE LAST THING</small>
+      <h2>There's A Secret Message</h2>
+    </div>
+
+    <div class="secret-box">
+
+      <button class="yes" onclick="openSecret()">
+        🔐 Open Secret
+      </button>
+
+      <div id="secretMessage" class="secret-message">
+        I love you, Sundori ❤️
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+  Made with ❤️ for Noyontara
+</footer>
+
+
+<script>
+
+/* ANSWERS */
+
+function hideResponses(){
+  document.getElementById("yesBox").style.display="none";
+  document.getElementById("maybeBox").style.display="none";
+  document.getElementById("noBox").style.display="none";
+}
+
+function answerYes(){
+
+  hideResponses();
+
+  document.getElementById("yesBox").style.display="block";
+
+  confetti();
+
+  for(let i=0;i<12;i++){
+    setTimeout(createHeart,i*120);
+  }
+
+}
+
+function answerMaybe(){
+
+  hideResponses();
+
+  document.getElementById("maybeBox").style.display="block";
+
+}
+
+function answerNo(){
+
+  hideResponses();
+
+  document.getElementById("noBox").style.display="block";
+
+}
+
+
+/* SECRET */
+
+function openSecret(){
+
+  const msg=document.getElementById("secretMessage");
+
+  msg.style.display="block";
+
+  for(let i=0;i<8;i++){
+    setTimeout(createHeart,i*150);
+  }
+
+}
+
+
+/* HEARTS */
+
+function createHeart(){
+
+  const heart=document.createElement("div");
+
+  heart.className="heart";
+
+  heart.innerHTML=["❤️","💗","💖","💕","✨"][Math.floor(Math.random()*5)];
+
+  heart.style.left=Math.random()*100+"%";
+
+  heart.style.fontSize=(15+Math.random()*25)+"px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },5000);
+
+}
+
+
+/* CONFETTI */
+
+function confetti(){
+
+  for(let i=0;i<70;i++){
+
+    const c=document.createElement("div");
+
+    c.className="confetti";
+
+    c.innerHTML="";
+
+    c.style.left=Math.random()*100+"%";
+
+    c.style.background=[
+      "#ff4d88",
+      "#ffffff",
+      "#ffd166",
+      "#9b5cff"
+    ][Math.floor(Math.random()*4)];
+
+    c.style.animationDuration=(2+Math.random()*2)+"s";
+
+    document.body.appendChild(c);
+
+    setTimeout(()=>{
+      c.remove();
+    },4000);
+
+  }
+
+}
+
+
+/* RANDOM FLOATING HEARTS */
+
+setInterval(()=>{
+
+  if(Math.random()>.65){
+    createHeart();
+  }
+
+},1800);
+
+</script>
+
+</body>
+</html>
